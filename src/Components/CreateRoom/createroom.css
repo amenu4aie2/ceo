@@ -1,0 +1,21 @@
+  .half {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition:      0.3s; /* Add a transition for a smooth effect (optional) */
+    /* Add any other common styles for both halves here */
+  }
+  
+  .left {
+    left: 0;
+    width: 50%; /* Cover the left half */
+    background-color: #E59D9D;; /* Set the background color for the left half */
+    /* Add any other styles specific to the left half here */
+  }
+  
+  .right {
+    right: 0;
+    width: 50%; /* Cover the right half */
+    background-color: #FF9A9A; /* Set the background color for the right half */
+    /* Add any other styles specific to the right half here */
+  }
