@@ -55,7 +55,7 @@ async function roomdetails(navigate,numberOfPeople,roomName) {
     await setDoc(doc(db, "room",roomName), {
       limit:numberOfPeople,
       count:1,
-      words:[],
+      word:[],
 
 
     });
@@ -88,6 +88,7 @@ const fetchDocument = async (navigate,app,room) => {
           await setDoc(doc(db, "room",`${room}`), {
             limit:docSnap.data().limit,
             count:docSnap.data().count+1,
+            word:[],
     
     
           });

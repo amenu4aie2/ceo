@@ -49,7 +49,7 @@ function GameRoom() {
 
   return (
     <div>
-      <div>{first.word.join(" ")}</div>{" "}
+      <div>{first ? first.word.join(" ") : ""}</div>{" "}
       {/* Display the words as a comma-separated list */}
       {first.word.length % size == location.state.mycount - 1 ? (
         <input
