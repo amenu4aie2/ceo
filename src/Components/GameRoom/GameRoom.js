@@ -6,7 +6,7 @@ import {
   doc,
   onSnapshot,
   updateDoc,
-  arrayUnion,
+  getDoc,
 } from "firebase/firestore";
 import { set } from "firebase/database";
 
@@ -37,15 +37,25 @@ function GameRoom() {
     if (newWord.trim() !== "") {
       try {
         const docRef = doc(db, "room", `${location.state.docRef}`);
-        await updateDoc(docRef, {
-          word: arrayUnion(newWord), // Use arrayUnion to avoid overwriting data
-        });
+        const docSnap = await getDoc(docRef); // Retrieve the document data using getDoc
+  
+        if (docSnap.exists()) {
+          const currentArray = docSnap.data().word || [];
+  
+          // Append the new word to the array
+          const updatedArray = currentArray.concat(newWord);
+  
+          // Update the document with the modified array
+          await updateDoc(docRef, { word: updatedArray });
+        }
+  
         setNewWord("");
       } catch (error) {
         console.error("Error appending word:", error);
       }
     }
   };
+  
 
   return (
     <div>
