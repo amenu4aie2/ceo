@@ -40,7 +40,7 @@ function Createroom() {
         
       <input onChange={(e)=>{setRoom(e.target.value)}}></input>
         <div>
-          <button onClick={()=>{fetchDocument(navigate,app,room)}}>Create</button>
+          <button onClick={()=>{fetchDocument(navigate,app,room)}}>Login</button>
         </div>
       </div>
     </div>
