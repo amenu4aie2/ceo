@@ -20,7 +20,7 @@ function SignUp() {
         <input onChange={(e) => setname(e.target.value)}></input>
       </div>
       <div>
-        <h1>Username</h1>
+        <h1>Gmail</h1>
         <input onChange={(e) => setusername(e.target.value)}></input>
       </div>
       <div>
